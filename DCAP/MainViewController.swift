@@ -31,8 +31,9 @@ class MainViewController: UIViewController {
     }()
 
     var loginButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: UIButtonType.system)
         button.setTitle("Login", for: .normal)
+        
         button.translatesAutoresizingMaskIntoConstraints = false
         
         return button
@@ -118,7 +119,8 @@ class MainViewController: UIViewController {
         loginButton.leftAnchor.constraint(equalTo: passwordLineView.leftAnchor).isActive = true
         loginButton.widthAnchor.constraint(equalToConstant: view.frame.width - 60).isActive = true
         loginButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        loginButton.backgroundColor = UIColor.blue
+        loginButton.backgroundColor = UIColor.darkGray
+        loginButton.tintColor = .white
         // Do any additional setup after loading the view.
     }
 
