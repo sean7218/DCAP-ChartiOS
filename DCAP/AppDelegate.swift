@@ -14,8 +14,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var navigationController: UINavigationController?
+    
+    var mainViewController: MainViewController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
+        mainViewController = MainViewController()
+        navigationController = UINavigationController(rootViewController: mainViewController!)
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
+        
         // Override point for customization after application launch.
         return true
     }
