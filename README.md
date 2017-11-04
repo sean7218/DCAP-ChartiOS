@@ -5,15 +5,15 @@
 - build neural network to catergorize the high/low thrust
 - summery
 
-'''swift
+```swift
 var life = Quant()
 life.resume(start: 20170113)
-'''
+```
 
-> Backend: Python and Amazon Web Services
-> Frontend: iOS and ReactJS
-> Framework: Chart, S3, DynamoDB, Flask, TensorFlow
-> Hosting: Docker and Digital Ocean
+> Backend: Python and AWS <br>
+> Frontend: iOS and ReactJS <br>
+> Framework: Chart, S3, DynamoDB, Flask, TensorFlow.<br>
+> Deploy: Docker and Digital Ocean. <br>
 
 
  
