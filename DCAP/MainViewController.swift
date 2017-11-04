@@ -33,7 +33,7 @@ class MainViewController: UIViewController {
     var loginButton: UIButton = {
         let button = UIButton(type: UIButtonType.system)
         button.setTitle("Login", for: .normal)
-        
+        button.addTarget(self, action: #selector(login), for: UIControlEvents.touchDown)
         button.translatesAutoresizingMaskIntoConstraints = false
         
         return button
@@ -68,6 +68,13 @@ class MainViewController: UIViewController {
         imageView.backgroundColor = .white
         return imageView
     }()
+    
+    @objc func login(){
+        print("Logging in")
+        let flow = UICollectionViewFlowLayout()
+        let home = HomeViewController(collectionViewLayout: flow)
+        navigationController?.pushViewController(home, animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -129,7 +136,7 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
     // MARK: - Navigation
 

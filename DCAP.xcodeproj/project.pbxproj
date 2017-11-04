@@ -16,6 +16,7 @@
 		A736E5E91FAC084F00E602C6 /* DCAPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A736E5E81FAC084F00E602C6 /* DCAPTests.swift */; };
 		A736E5F41FAC084F00E602C6 /* DCAPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A736E5F31FAC084F00E602C6 /* DCAPUITests.swift */; };
 		A736E6021FAC0A1C00E602C6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A736E6011FAC0A1C00E602C6 /* MainViewController.swift */; };
+		A736E6041FAC27FD00E602C6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A736E6031FAC27FD00E602C6 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		A736E5F31FAC084F00E602C6 /* DCAPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DCAPUITests.swift; sourceTree = "<group>"; };
 		A736E5F51FAC084F00E602C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A736E6011FAC0A1C00E602C6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		A736E6031FAC27FD00E602C6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				A736E6011FAC0A1C00E602C6 /* MainViewController.swift */,
 				A736E5D01FAC084F00E602C6 /* AppDelegate.swift */,
 				A736E5D21FAC084F00E602C6 /* ViewController.swift */,
+				A736E6031FAC27FD00E602C6 /* HomeViewController.swift */,
 				A736E5D41FAC084F00E602C6 /* Main.storyboard */,
 				A736E5DA1FAC084F00E602C6 /* Assets.xcassets */,
 				A736E5DC1FAC084F00E602C6 /* LaunchScreen.storyboard */,
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A736E6041FAC27FD00E602C6 /* HomeViewController.swift in Sources */,
 				A736E5D91FAC084F00E602C6 /* DCAP.xcdatamodeld in Sources */,
 				A736E5D31FAC084F00E602C6 /* ViewController.swift in Sources */,
 				A736E5D11FAC084F00E602C6 /* AppDelegate.swift in Sources */,
