@@ -17,11 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var navigationController: UINavigationController?
     
     var mainViewController: MainViewController?
+    
+    var menuViewController: MenuViewController?
+    
+    var viewController: UIViewController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
+        
+        
         mainViewController = MainViewController()
-        navigationController = UINavigationController(rootViewController: mainViewController!)
+        menuViewController = MenuViewController()
+        viewController = ViewController()
+        navigationController = UINavigationController(rootViewController: viewController!)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         

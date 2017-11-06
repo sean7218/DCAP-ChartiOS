@@ -10,6 +10,28 @@ import Foundation
 import UIKit
 
 class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    
+    var menuButton: UIButton = {
+        let button = UIButton(type: UIButtonType.system)
+        button.setTitle("Menu", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    @objc func slideMenuIn(){
+        
+    }
+    
+    func setupNavigationBar(){
+       let navBar = self.navigationController?.navigationBar
+        self.navigationController?.navigationBar.addSubview(menuButton)
+    
+        menuButton.addTarget(self, action: #selector(slideMenuIn), for: .touchUpInside)
+        menuButton.rightAnchor.constraint(equalTo: (navBar?.rightAnchor)!, constant: -10).isActive = true
+        menuButton.centerYAnchor.constraint(equalTo: (navBar?.centerYAnchor)!, constant: 0).isActive = true
+        menuButton.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        menuButton.heightAnchor.constraint(equalToConstant: 70).isActive = true
+    }
     override func viewDidLoad() {
         
         collectionView?.register(FoodTile.self, forCellWithReuseIdentifier: "Tile")
@@ -17,6 +39,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
                                  forSupplementaryViewOfKind: UICollectionElementKindSectionHeader,
                                  withReuseIdentifier: "Header")
         collectionView?.backgroundColor = .white
+        setupNavigationBar()
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -48,8 +71,13 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (view.frame.width/2 - 10), height: (view.frame.width/2 - 10))
+        return CGSize(width: (view.frame.width), height: 100)
     }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        print("Transitioning to another view")
+    }
+    
     
 }
 
@@ -81,7 +109,7 @@ class HeaderTile: UICollectionViewCell {
 class FoodTile: UICollectionViewCell {
     
     var tileImageView: UIImageView = {
-        let imageView = UIImageView(image: #imageLiteral(resourceName: "food_bowl"))
+        let imageView = UIImageView()
         imageView.backgroundColor = .orange
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
