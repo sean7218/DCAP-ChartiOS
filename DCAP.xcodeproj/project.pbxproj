@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A736E5D11FAC084F00E602C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A736E5D01FAC084F00E602C6 /* AppDelegate.swift */; };
-		A736E5D31FAC084F00E602C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A736E5D21FAC084F00E602C6 /* ViewController.swift */; };
+		A736E5D31FAC084F00E602C6 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A736E5D21FAC084F00E602C6 /* ContainerViewController.swift */; };
 		A736E5D61FAC084F00E602C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A736E5D41FAC084F00E602C6 /* Main.storyboard */; };
 		A736E5D91FAC084F00E602C6 /* DCAP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A736E5D71FAC084F00E602C6 /* DCAP.xcdatamodeld */; };
 		A736E5DB1FAC084F00E602C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A736E5DA1FAC084F00E602C6 /* Assets.xcassets */; };
@@ -40,7 +40,7 @@
 /* Begin PBXFileReference section */
 		A736E5CD1FAC084F00E602C6 /* DCAP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCAP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A736E5D01FAC084F00E602C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A736E5D21FAC084F00E602C6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A736E5D21FAC084F00E602C6 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		A736E5D51FAC084F00E602C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A736E5D81FAC084F00E602C6 /* DCAP.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DCAP.xcdatamodel; sourceTree = "<group>"; };
 		A736E5DA1FAC084F00E602C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				A736E5D01FAC084F00E602C6 /* AppDelegate.swift */,
-				A736E5D21FAC084F00E602C6 /* ViewController.swift */,
+				A736E5D21FAC084F00E602C6 /* ContainerViewController.swift */,
 				A736E6011FAC0A1C00E602C6 /* MainViewController.swift */,
 				A736E6031FAC27FD00E602C6 /* HomeViewController.swift */,
 				A736E6051FAFEE8E00E602C6 /* MenuViewController.swift */,
@@ -274,7 +274,7 @@
 				A736E6041FAC27FD00E602C6 /* HomeViewController.swift in Sources */,
 				A736E6061FAFEE8E00E602C6 /* MenuViewController.swift in Sources */,
 				A736E5D91FAC084F00E602C6 /* DCAP.xcdatamodeld in Sources */,
-				A736E5D31FAC084F00E602C6 /* ViewController.swift in Sources */,
+				A736E5D31FAC084F00E602C6 /* ContainerViewController.swift in Sources */,
 				A736E5D11FAC084F00E602C6 /* AppDelegate.swift in Sources */,
 				A736E6021FAC0A1C00E602C6 /* MainViewController.swift in Sources */,
 			);

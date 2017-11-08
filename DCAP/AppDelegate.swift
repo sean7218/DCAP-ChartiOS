@@ -18,18 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var mainViewController: MainViewController?
     
-    var menuViewController: MenuViewController?
-    
-    var viewController: UIViewController?
+    var containerViewController: ContainerViewController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        window = UIWindow(frame: UIScreen.main.bounds)
         
-        mainViewController = MainViewController()
-        menuViewController = MenuViewController()
-        viewController = ViewController()
-        navigationController = UINavigationController(rootViewController: viewController!)
-        window?.rootViewController = navigationController
+        containerViewController = ContainerViewController()
+        window?.rootViewController = containerViewController
         window?.makeKeyAndVisible()
         
         // Override point for customization after application launch.

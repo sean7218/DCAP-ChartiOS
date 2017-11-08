@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ContainerViewController: UIViewController {
 
     var menuButton: UIButton = {
         let button = UIButton(type: UIButtonType.system)
@@ -39,6 +39,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let layout = UICollectionViewFlowLayout()
+        let centerVC = HomeViewController(collectionViewLayout: layout)
+        let navVC = UINavigationController(rootViewController: centerVC)
         
         
         self.view.addSubview(menuButton)
