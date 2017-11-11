@@ -12,30 +12,40 @@ import UIKit
 
 class CenterViewController: UIViewController {
     
-    @IBOutlet weak private var imageView: UIImageView!
-    @IBOutlet weak private var titleLabel: UILabel!
-    @IBOutlet weak private var creatorLabel: UILabel!
+    var leftButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.frame = CGRect(x: 50, y: 50, width: 150, height: 150)
+        button.setTitle( "Menu", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
     
     var delegate: CenterViewControllerDelegate?
     
+    override func viewDidLoad() {
+        setupViews()
+    }
+    
+    func setupViews(){
+        view.addSubview(leftButton)
+        leftButton.addTarget(self, action: #selector(menuTapped), for: .touchUpInside)
+        leftButton.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        leftButton.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        leftButton.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        leftButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    }
     // MARK: Button actions
     
-    @IBAction func kittiesTapped(_ sender: Any) {
+    @objc func menuTapped() {
         delegate?.toggleLeftPanel?()
     }
     
-    @IBAction func puppiesTapped(_ sender: Any) {
-        delegate?.toggleRightPanel?()
-    }
 }
 
 extension CenterViewController: SidePanelViewControllerDelegate {
     
-    func didSelectAnimal(_ animal: Animal) {
-        imageView.image = animal.image
-        titleLabel.text = animal.title
-        creatorLabel.text = animal.creator
-        
+    func didSelect(_ page: String) {
+
         delegate?.collapseSidePanels?()
     }
 }

@@ -19,13 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var mainViewController: MainViewController?
     
     var containerViewController: ContainerViewController?
+    
+    var pageViewController: SidePanelViewController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
+        pageViewController = SidePanelViewController()
+        
         containerViewController = ContainerViewController()
-        window?.rootViewController = containerViewController
+        window?.rootViewController = pageViewController
         window?.makeKeyAndVisible()
         
         // Override point for customization after application launch.

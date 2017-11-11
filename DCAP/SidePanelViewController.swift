@@ -8,53 +8,54 @@
 import UIKit
 import Foundation
 
-class SidePanelViewController: UIViewController {
+class SidePanelViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var tableView: UITableView!
+    var tableView: UITableView = {
+        let tv = UITableView(frame: UIScreen.main.bounds, style: UITableViewStyle.plain)
+        tv.translatesAutoresizingMaskIntoConstraints = false
+        return tv
+    }()
     
     var delegate: SidePanelViewControllerDelegate?
     
-    var animals: Array<Animal>!
+    var pages: Array<Page>!
     
     enum CellIdentifiers {
-        static let AnimalCell = "AnimalCell"
+        static let PageCell = "PageCell"
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.register(PageCell.self, forCellReuseIdentifier: CellIdentifiers.PageCell)
+        tableView.delegate = self
+        tableView.dataSource = self
         tableView.reloadData()
     }
-}
-
-// MARK: Table View Data Source
-
-extension SidePanelViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return animals.count
+        return pages.count
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.AnimalCell, for: indexPath) as! AnimalCell
-        cell.configureForAnimal(animals[indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.PageCell, for: indexPath) as! PageCell
+        cell.configureForPage(pages[indexPath.row])
         return cell
     }
-}
-
-// Mark: Table View Delegate
-
-extension SidePanelViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let animal = animals[indexPath.row]
-        delegate?.didSelectAnimal(animal)
+        let page = pages[indexPath.row]
+        delegate?.didSelect(page.title!)
     }
 }
 
 
 
-protocol SidePanelViewControllerDelegate {
-    func didSelectAnimal(_ animal: Animal)
-}
+
+
+
 

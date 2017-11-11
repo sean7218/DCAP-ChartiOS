@@ -20,8 +20,6 @@ class ContainerViewController: UIViewController {
     }
     var leftViewController: SidePanelViewController?
     
-    var rightViewController: SidePanelViewController?
-    
     let centerPanelExpandedOffset: CGFloat = 60
     
     override func viewDidLoad() {
@@ -56,16 +54,6 @@ extension ContainerViewController: CenterViewControllerDelegate {
         animateLeftPanel(shouldExpand: notAlreadyExpanded)
     }
     
-    func toggleRightPanel() {
-        
-        let notAlreadyExpanded = (currentState != .rightPanelExpanded)
-        
-        if notAlreadyExpanded {
-            addRightPanelViewController()
-        }
-        
-        animateRightPanel(shouldExpand: notAlreadyExpanded)
-    }
     
     func collapseSidePanels() {
         
@@ -99,17 +87,7 @@ extension ContainerViewController: CenterViewControllerDelegate {
         sidePanelController.didMove(toParentViewController: self)
     }
     
-    func addRightPanelViewController() {
-        
-        guard rightViewController == nil else { return }
-        
-        if let vc = UIStoryboard.rightViewController() {
-            vc.animals = Animal.allDogs()
-            addChildSidePanelController(vc)
-            rightViewController = vc
-        }
-    }
-    
+
     func animateLeftPanel(shouldExpand: Bool) {
         
         if shouldExpand {
@@ -132,20 +110,6 @@ extension ContainerViewController: CenterViewControllerDelegate {
         }, completion: completion)
     }
     
-    func animateRightPanel(shouldExpand: Bool) {
-        
-        if shouldExpand {
-            currentState = .rightPanelExpanded
-            animateCenterPanelXPosition(targetPosition: -centerNavigationController.view.frame.width + centerPanelExpandedOffset)
-            
-        } else {
-            animateCenterPanelXPosition(targetPosition: 0) { _ in
-                self.currentState = .bothCollapsed
-                self.rightViewController?.view.removeFromSuperview()
-                self.rightViewController = nil
-            }
-        }
-    }
     
     func showShadowForCenterViewController(_ shouldShowShadow: Bool) {
         if shouldShowShadow {
@@ -171,7 +135,7 @@ extension ContainerViewController: UIGestureRecognizerDelegate {
                 if gestureIsDraggingFromLeftToRight {
                     addLeftPanelViewController()
                 } else {
-                    addRightPanelViewController()
+                    //addRightPanelViewController()
                 }
                 
                 showShadowForCenterViewController(true)
