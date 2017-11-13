@@ -12,9 +12,9 @@ import UIKit
 
 class CenterViewController: UIViewController {
     
-    var leftButton: UIButton = {
+    lazy var leftButton: UIButton = {
         let button = UIButton(type: .system)
-        button.frame = CGRect(x: 50, y: 50, width: 150, height: 150)
+        button.frame = CGRect(x: 0, y: 0, width: 50, height: 150)
         button.setTitle( "Menu", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -29,14 +29,15 @@ class CenterViewController: UIViewController {
     func setupViews(){
         view.addSubview(leftButton)
         leftButton.addTarget(self, action: #selector(menuTapped), for: .touchUpInside)
-        leftButton.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        leftButton.topAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         leftButton.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        leftButton.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        leftButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
         leftButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     // MARK: Button actions
     
     @objc func menuTapped() {
+        print("MenuTapped")
         delegate?.toggleLeftPanel?()
     }
     
@@ -44,8 +45,8 @@ class CenterViewController: UIViewController {
 
 extension CenterViewController: SidePanelViewControllerDelegate {
     
-    func didSelect(_ page: String) {
-
+    func didSelect(_ page: Page) {
+        print("Selecting the page already")
         delegate?.collapseSidePanels?()
     }
 }

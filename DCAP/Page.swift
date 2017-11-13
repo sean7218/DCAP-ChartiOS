@@ -20,7 +20,10 @@ struct Page {
     static func allPages() -> Array<Page> {
         return [
             Page(title: "Page 1", image: nil),
-            Page(title: "Page 2", image: nil)
+            Page(title: "Page 2", image: nil),
+            Page(title: "Page 3", image: nil),
+            Page(title: "Page 4", image: nil),
+            Page(title: "Page 5", image: nil)
             
         ]
     }

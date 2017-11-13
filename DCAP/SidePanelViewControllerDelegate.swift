@@ -9,5 +9,5 @@
 import Foundation
 
 protocol SidePanelViewControllerDelegate {
-    func didSelect(_ page: String)
+    func didSelect(_ page: Page)
 }

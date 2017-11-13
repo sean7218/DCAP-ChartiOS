@@ -10,9 +10,13 @@ import Foundation
 
 class SidePanelViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var tableView: UITableView = {
+    lazy var tableView: UITableView = {
         let tv = UITableView(frame: UIScreen.main.bounds, style: UITableViewStyle.plain)
+        tv.backgroundColor = .white
+        tv.delegate = self
+        tv.dataSource = self
         tv.translatesAutoresizingMaskIntoConstraints = false
+        tv.register(PageCell.self, forCellReuseIdentifier: CellIdentifiers.PageCell)
         return tv
     }()
     
@@ -26,9 +30,8 @@ class SidePanelViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(PageCell.self, forCellReuseIdentifier: CellIdentifiers.PageCell)
-        tableView.delegate = self
-        tableView.dataSource = self
+        view.addSubview(tableView)
+        pages = Page.allPages()
         tableView.reloadData()
     }
     
@@ -49,8 +52,10 @@ class SidePanelViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let page = pages[indexPath.row]
-        delegate?.didSelect(page.title!)
+        delegate?.didSelect(page)
     }
+    
+    
 }
 
 
