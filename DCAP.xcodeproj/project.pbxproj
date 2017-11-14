@@ -117,17 +117,10 @@
 		A736E5CF1FAC084F00E602C6 /* DCAP */ = {
 			isa = PBXGroup;
 			children = (
+				A736E6151FBAA7EC00E602C6 /* Controller */,
+				A736E6141FBAA7E600E602C6 /* View */,
+				A736E6131FBAA7D000E602C6 /* Model */,
 				A736E5D01FAC084F00E602C6 /* AppDelegate.swift */,
-				A736E5D21FAC084F00E602C6 /* ContainerViewController.swift */,
-				A736E6091FB555AD00E602C6 /* CenterViewController.swift */,
-				A736E6071FB5558A00E602C6 /* CenterViewControllerDelegate.swift */,
-				A736E60B1FB555E200E602C6 /* SidePanelViewController.swift */,
-				A736E60D1FB7342B00E602C6 /* SidePanelViewControllerDelegate.swift */,
-				A736E60F1FB737D500E602C6 /* Page.swift */,
-				A736E6111FB737F800E602C6 /* PageCell.swift */,
-				A736E6011FAC0A1C00E602C6 /* MainViewController.swift */,
-				A736E6031FAC27FD00E602C6 /* HomeViewController.swift */,
-				A736E6051FAFEE8E00E602C6 /* MenuViewController.swift */,
 				A736E5D41FAC084F00E602C6 /* Main.storyboard */,
 				A736E5DA1FAC084F00E602C6 /* Assets.xcassets */,
 				A736E5DC1FAC084F00E602C6 /* LaunchScreen.storyboard */,
@@ -153,6 +146,45 @@
 				A736E5F51FAC084F00E602C6 /* Info.plist */,
 			);
 			path = DCAPUITests;
+			sourceTree = "<group>";
+		};
+		A736E6131FBAA7D000E602C6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A736E60F1FB737D500E602C6 /* Page.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A736E6141FBAA7E600E602C6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A736E6111FB737F800E602C6 /* PageCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A736E6151FBAA7EC00E602C6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A736E6161FBAB84D00E602C6 /* Side Panel */,
+				A736E5D21FAC084F00E602C6 /* ContainerViewController.swift */,
+				A736E6091FB555AD00E602C6 /* CenterViewController.swift */,
+				A736E6011FAC0A1C00E602C6 /* MainViewController.swift */,
+				A736E6031FAC27FD00E602C6 /* HomeViewController.swift */,
+				A736E6051FAFEE8E00E602C6 /* MenuViewController.swift */,
+				A736E6071FB5558A00E602C6 /* CenterViewControllerDelegate.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A736E6161FBAB84D00E602C6 /* Side Panel */ = {
+			isa = PBXGroup;
+			children = (
+				A736E60D1FB7342B00E602C6 /* SidePanelViewControllerDelegate.swift */,
+				A736E60B1FB555E200E602C6 /* SidePanelViewController.swift */,
+			);
+			path = "Side Panel";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

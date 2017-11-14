@@ -29,7 +29,7 @@ class ContainerViewController: UIViewController {
         }
     }
 
-    let centerPanelExpandedOffset: CGFloat = 60
+    let centerPanelExpandedOffset: CGFloat = 50
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -73,10 +73,8 @@ extension ContainerViewController: CenterViewControllerDelegate {
     
     func addLeftPanelViewController() {
         
-        
-        print(leftViewController)
         if let vc = leftViewController {
-            //vc.view.backgroundColor = .red
+
             vc.pages = Page.allPages()
             addChildSidePanelController(vc)
             leftViewController = vc
