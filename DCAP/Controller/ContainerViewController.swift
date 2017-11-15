@@ -15,6 +15,8 @@ class ContainerViewController: UIViewController {
         return vc
     }()
     
+    
+    
     var centerNavigationController: UINavigationController!
     
     enum SlideOutState {
@@ -42,12 +44,16 @@ class ContainerViewController: UIViewController {
         
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
         centerNavigationController.view.addGestureRecognizer(panGestureRecognizer)
+        
+
     }
 }
 
 // MARK: CenterViewController delegate
 
 extension ContainerViewController: CenterViewControllerDelegate {
+    
+
     
     func toggleLeftPanel() {
         print(currentState)
@@ -121,7 +127,10 @@ extension ContainerViewController: CenterViewControllerDelegate {
             centerNavigationController.view.layer.shadowOpacity = 0.0
         }
     }
+    
 }
+
+
 
 // MARK: Gesture recognizer
 

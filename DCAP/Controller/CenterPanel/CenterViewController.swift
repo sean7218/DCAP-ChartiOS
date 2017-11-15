@@ -20,7 +20,16 @@ class CenterViewController: UIViewController {
         return button
     }()
     
+    lazy var popButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.frame = CGRect(x: 0, y: 0, width: 50, height: 150)
+        button.setTitle( "Pop", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     var delegate: CenterViewControllerDelegate?
+    
     
     override func viewDidLoad() {
         setupViews()
@@ -33,6 +42,13 @@ class CenterViewController: UIViewController {
         leftButton.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         leftButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
         leftButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        view.addSubview(popButton)
+        popButton.addTarget(self, action: #selector(popTapped), for: .touchUpInside)
+        popButton.topAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        popButton.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        popButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        popButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     // MARK: Button actions
     
@@ -41,8 +57,20 @@ class CenterViewController: UIViewController {
         delegate?.toggleLeftPanel?()
     }
     
+    @objc func popTapped() {
+        let popViewController = PopViewController()
+        self.present(popViewController, animated: true, completion: nil)
+        //self.navigationController?.pushViewController(popViewController, animated: true)
+    }
+    
 }
 
+extension CenterViewController: PopViewControllerDelegate {
+    func didSelect(_ opt: String) {
+        print("opt")
+  
+    }
+}
 extension CenterViewController: SidePanelViewControllerDelegate {
     
     func didSelect(_ page: Page) {

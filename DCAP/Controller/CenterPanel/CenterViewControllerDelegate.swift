@@ -13,4 +13,6 @@ import UIKit
 protocol CenterViewControllerDelegate {
     @objc optional func toggleLeftPanel()
     @objc optional func collapseSidePanels()
+
+
 }

@@ -24,6 +24,8 @@
 		A736E60E1FB7342B00E602C6 /* SidePanelViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A736E60D1FB7342B00E602C6 /* SidePanelViewControllerDelegate.swift */; };
 		A736E6101FB737D500E602C6 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = A736E60F1FB737D500E602C6 /* Page.swift */; };
 		A736E6121FB737F800E602C6 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A736E6111FB737F800E602C6 /* PageCell.swift */; };
+		A736E61A1FBAB9C200E602C6 /* PopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A736E6191FBAB9C200E602C6 /* PopViewController.swift */; };
+		A736E61C1FBABA4200E602C6 /* PopViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A736E61B1FBABA4200E602C6 /* PopViewControllerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		A736E60D1FB7342B00E602C6 /* SidePanelViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidePanelViewControllerDelegate.swift; sourceTree = "<group>"; };
 		A736E60F1FB737D500E602C6 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		A736E6111FB737F800E602C6 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
+		A736E6191FBAB9C200E602C6 /* PopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopViewController.swift; sourceTree = "<group>"; };
+		A736E61B1FBABA4200E602C6 /* PopViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopViewControllerDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,24 +171,42 @@
 		A736E6151FBAA7EC00E602C6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				A736E6161FBAB84D00E602C6 /* Side Panel */,
+				A736E6181FBAB9B100E602C6 /* PopPanel */,
+				A736E6171FBAB8E800E602C6 /* CenterPanel */,
+				A736E6161FBAB84D00E602C6 /* SidePanel */,
 				A736E5D21FAC084F00E602C6 /* ContainerViewController.swift */,
-				A736E6091FB555AD00E602C6 /* CenterViewController.swift */,
 				A736E6011FAC0A1C00E602C6 /* MainViewController.swift */,
 				A736E6031FAC27FD00E602C6 /* HomeViewController.swift */,
 				A736E6051FAFEE8E00E602C6 /* MenuViewController.swift */,
-				A736E6071FB5558A00E602C6 /* CenterViewControllerDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		A736E6161FBAB84D00E602C6 /* Side Panel */ = {
+		A736E6161FBAB84D00E602C6 /* SidePanel */ = {
 			isa = PBXGroup;
 			children = (
-				A736E60D1FB7342B00E602C6 /* SidePanelViewControllerDelegate.swift */,
 				A736E60B1FB555E200E602C6 /* SidePanelViewController.swift */,
+				A736E60D1FB7342B00E602C6 /* SidePanelViewControllerDelegate.swift */,
 			);
-			path = "Side Panel";
+			path = SidePanel;
+			sourceTree = "<group>";
+		};
+		A736E6171FBAB8E800E602C6 /* CenterPanel */ = {
+			isa = PBXGroup;
+			children = (
+				A736E6091FB555AD00E602C6 /* CenterViewController.swift */,
+				A736E6071FB5558A00E602C6 /* CenterViewControllerDelegate.swift */,
+			);
+			path = CenterPanel;
+			sourceTree = "<group>";
+		};
+		A736E6181FBAB9B100E602C6 /* PopPanel */ = {
+			isa = PBXGroup;
+			children = (
+				A736E6191FBAB9C200E602C6 /* PopViewController.swift */,
+				A736E61B1FBABA4200E602C6 /* PopViewControllerDelegate.swift */,
+			);
+			path = PopPanel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,11 +346,13 @@
 				A736E6081FB5558A00E602C6 /* CenterViewControllerDelegate.swift in Sources */,
 				A736E6041FAC27FD00E602C6 /* HomeViewController.swift in Sources */,
 				A736E6121FB737F800E602C6 /* PageCell.swift in Sources */,
+				A736E61C1FBABA4200E602C6 /* PopViewControllerDelegate.swift in Sources */,
 				A736E6061FAFEE8E00E602C6 /* MenuViewController.swift in Sources */,
 				A736E60E1FB7342B00E602C6 /* SidePanelViewControllerDelegate.swift in Sources */,
 				A736E60C1FB555E200E602C6 /* SidePanelViewController.swift in Sources */,
 				A736E5D91FAC084F00E602C6 /* DCAP.xcdatamodeld in Sources */,
 				A736E6101FB737D500E602C6 /* Page.swift in Sources */,
+				A736E61A1FBAB9C200E602C6 /* PopViewController.swift in Sources */,
 				A736E5D31FAC084F00E602C6 /* ContainerViewController.swift in Sources */,
 				A736E60A1FB555AD00E602C6 /* CenterViewController.swift in Sources */,
 				A736E5D11FAC084F00E602C6 /* AppDelegate.swift in Sources */,
