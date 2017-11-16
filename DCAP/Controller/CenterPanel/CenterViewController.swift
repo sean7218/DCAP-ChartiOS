@@ -59,15 +59,15 @@ class CenterViewController: UIViewController {
     
     @objc func popTapped() {
         let popViewController = PopViewController()
+        popViewController.delegate = self
         self.present(popViewController, animated: true, completion: nil)
-        //self.navigationController?.pushViewController(popViewController, animated: true)
     }
     
 }
 
 extension CenterViewController: PopViewControllerDelegate {
     func didSelect(_ opt: String) {
-        print("opt")
+        print(opt)
   
     }
 }
