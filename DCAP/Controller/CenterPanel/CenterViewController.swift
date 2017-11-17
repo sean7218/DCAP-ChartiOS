@@ -28,6 +28,14 @@ class CenterViewController: UIViewController {
         return button
     }()
     
+    lazy var bottomButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.frame = CGRect(x: 0, y: 0, width: 50, height: 150)
+        button.setTitle( "Bottom", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     var delegate: CenterViewControllerDelegate?
     
     
@@ -49,6 +57,13 @@ class CenterViewController: UIViewController {
         popButton.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         popButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
         popButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        view.addSubview(bottomButton)
+        bottomButton.addTarget(self, action: #selector(bottomBannerTapped), for: .touchUpInside)
+        bottomButton.topAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
+        bottomButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        bottomButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        bottomButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     // MARK: Button actions
     
@@ -61,6 +76,35 @@ class CenterViewController: UIViewController {
         let popViewController = PopViewController()
         popViewController.delegate = self
         self.present(popViewController, animated: true, completion: nil)
+    }
+    
+    var isBottomPanelShown: Bool?
+    var bottomPanelViewController: BottomPanelViewController?
+    
+    @objc func bottomBannerTapped(){
+        if (bottomPanelViewController != nil) {
+            isBottomPanelShown = true
+        } else {
+            isBottomPanelShown = false
+        }
+        if (!isBottomPanelShown!){
+            bottomPanelViewController = BottomPanelViewController()
+            let bottomBanner = bottomPanelViewController?.view
+            self.view.addSubview(bottomBanner!)
+            bottomBanner?.backgroundColor = .gray
+            bottomBanner?.translatesAutoresizingMaskIntoConstraints = true
+            
+            let ypos:CGFloat = view.frame.height
+            bottomBanner?.frame = CGRect(x: 0, y: ypos, width: self.view.frame.width, height: 50)
+            UIView.animate(withDuration: 1, animations: {
+                
+                bottomBanner?.frame = CGRect(x: 0, y: ypos-80, width: self.view.frame.width, height: 50)
+                
+                
+            }, completion: nil)
+            isBottomPanelShown = true
+        }
+        
     }
     
 }

@@ -11,7 +11,26 @@ import UIKit
 
 class BottomPanelView: UIView {
     
+    var shouldSetupConstraints = true
+    
+    override func updateConstraints() {
+        if(shouldSetupConstraints){
+            self.setupViews()
+            shouldSetupConstraints = false
+        }
+        
+        super.updateConstraints()
+    }
+    
     var titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "VIEW CART"
+        label.backgroundColor = .green
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    var leftLabel: UILabel = {
         let label = UILabel()
         label.text = "$4.21"
         label.backgroundColor = .green
@@ -19,24 +38,62 @@ class BottomPanelView: UIView {
         return label
     }()
     
+    var rightImageView: UIImageView = {
+        let imageView = UIImageView(frame: CGRect.zero)
+        imageView.backgroundColor = .red
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
     var expandButton: UIButton = {
         let button = UIButton(type: UIButtonType.system)
-        button.setTitle("expand", for: .normal)
+        button.setTitle("", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .red
+        button.backgroundColor = UIColor.clear
         return button
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addSubview(titleLabel)
-        let vert = NSLayoutConstraint.constraints(withVisualFormat: "H:|-[v0]-|", options: [], metrics: nil, views: ["v0": titleLabel])
-        let hori = NSLayoutConstraint.constraints(withVisualFormat: "V:|-[v0]-|", options: [], metrics: nil, views: ["v0" : titleLabel])
-        NSLayoutConstraint.activate([vert, hori])
+
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setupViews(){
+        addSubview(titleLabel)
+        titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        titleLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        titleLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        addSubview(leftLabel)
+        leftLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        leftLabel.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        leftLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        leftLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        addSubview(rightImageView)
+        rightImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        rightImageView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        rightImageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        rightImageView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        addSubview(expandButton)
+        expandButton.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        expandButton.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        expandButton.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
+        expandButton.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
+        
+//        let vert = NSLayoutConstraint.constraints(withVisualFormat: "H:|-[v0]-|", options: [], metrics: nil, views: ["v0": titleLabel])
+//        let hori = NSLayoutConstraint.constraints(withVisualFormat: "V:|-[v0]-|", options: [], metrics: nil, views: ["v0" : titleLabel])
+//        var allConstraints = [NSLayoutConstraint]()
+//        allConstraints += vert
+//        allConstraints += hori
+//        NSLayoutConstraint.activate(allConstraints)
+        
     }
     
     

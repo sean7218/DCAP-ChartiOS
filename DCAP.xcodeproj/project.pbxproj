@@ -29,6 +29,7 @@
 		A736E61F1FBCB44100E602C6 /* BottomPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A736E61E1FBCB44100E602C6 /* BottomPanelViewController.swift */; };
 		A736E6211FBCB45C00E602C6 /* BottomPanelViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A736E6201FBCB45C00E602C6 /* BottomPanelViewControllerDelegate.swift */; };
 		A736E6231FBCB68600E602C6 /* BottomPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A736E6221FBCB68600E602C6 /* BottomPanelView.swift */; };
+		A736E6261FBE533B00E602C6 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A736E6251FBE533B00E602C6 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		A736E61E1FBCB44100E602C6 /* BottomPanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPanelViewController.swift; sourceTree = "<group>"; };
 		A736E6201FBCB45C00E602C6 /* BottomPanelViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPanelViewControllerDelegate.swift; sourceTree = "<group>"; };
 		A736E6221FBCB68600E602C6 /* BottomPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPanelView.swift; sourceTree = "<group>"; };
+		A736E6251FBE533B00E602C6 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 		A736E6151FBAA7EC00E602C6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A736E6241FBE532300E602C6 /* TabBar */,
 				A736E61D1FBCB41400E602C6 /* BottomPanel */,
 				A736E6181FBAB9B100E602C6 /* PopPanel */,
 				A736E6171FBAB8E800E602C6 /* CenterPanel */,
@@ -224,6 +227,14 @@
 				A736E6201FBCB45C00E602C6 /* BottomPanelViewControllerDelegate.swift */,
 			);
 			path = BottomPanel;
+			sourceTree = "<group>";
+		};
+		A736E6241FBE532300E602C6 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				A736E6251FBE533B00E602C6 /* TabBarController.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,6 +375,7 @@
 				A736E6211FBCB45C00E602C6 /* BottomPanelViewControllerDelegate.swift in Sources */,
 				A736E6041FAC27FD00E602C6 /* HomeViewController.swift in Sources */,
 				A736E61F1FBCB44100E602C6 /* BottomPanelViewController.swift in Sources */,
+				A736E6261FBE533B00E602C6 /* TabBarController.swift in Sources */,
 				A736E6121FB737F800E602C6 /* PageCell.swift in Sources */,
 				A736E61C1FBABA4200E602C6 /* PopViewControllerDelegate.swift in Sources */,
 				A736E6231FBCB68600E602C6 /* BottomPanelView.swift in Sources */,
