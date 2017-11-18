@@ -16,23 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var navigationController: UINavigationController?
     
-//    var mainViewController: MainViewController?
-    
     var containerViewController: ContainerViewController?
     
-//    var sideViewController: SidePanelViewController?
-//
-//    var centerViewController: CenterViewController?
+    var tabBarViewController: TabBarController?
+
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
-//
-//        sideViewController = SidePanelViewController()
-//        centerViewController = CenterViewController()
         containerViewController = ContainerViewController()
-        
-        window?.rootViewController = containerViewController
+        tabBarViewController = UITabBarController() as? TabBarController
+        window?.rootViewController = tabBarViewController
         window?.makeKeyAndVisible()
         
         // Override point for customization after application launch.
