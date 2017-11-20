@@ -10,6 +10,7 @@ import UIKit
 
 class PopViewController: UIViewController {
     
+
     var firstOptionButton: UIButton = {
         let button = UIButton(type: UIButtonType.system)
         button.setTitle("Option 1", for: .normal)
@@ -18,11 +19,26 @@ class PopViewController: UIViewController {
         return button
     }()
     
+    var containerView: UIView = {
+        let view = UIView(frame: CGRect.zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .red
+        
+        return view
+    }()
+    
     var delegate: PopViewControllerDelegate?
     
     override func viewDidLoad() {
-        view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-        view.backgroundColor = UIColor.init(red: 120/255, green: 125/255, blue: 111/255, alpha: 0.6)
+        
+        view.backgroundColor = .clear
+        
+        view.addSubview(containerView)
+        containerView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        containerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        containerView.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        containerView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        
         view.addSubview(firstOptionButton)
         firstOptionButton.addTarget(self, action: #selector(selectOption), for: .touchUpInside)
         firstOptionButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true

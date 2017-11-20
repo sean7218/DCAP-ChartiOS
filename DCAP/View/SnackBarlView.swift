@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class BottomPanelView: UIView {
+class SnackBarView: UIView {
     
     var shouldSetupConstraints = true
     

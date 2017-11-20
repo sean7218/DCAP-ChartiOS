@@ -9,6 +9,6 @@
 import UIKit
 
 @objc
-protocol BottomPanelViewControllerDelegate {
+protocol SnackBarViewControllerDelegate {
     @objc optional func addItem()
 }

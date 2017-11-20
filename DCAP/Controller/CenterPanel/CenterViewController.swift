@@ -36,6 +36,11 @@ class CenterViewController: UIViewController {
         return button
     }()
     
+    var rightBarButtonItem: UIBarButtonItem = {
+        let button = UIBarButtonItem(title: "Pop", style: UIBarButtonItemStyle.done, target: #selector(popTapped), action: nil)
+        return button
+    }()
+    
     var delegate: CenterViewControllerDelegate?
     
     
@@ -44,6 +49,10 @@ class CenterViewController: UIViewController {
     }
     
     func setupViews(){
+        
+        self.navigationItem.rightBarButtonItem = rightBarButtonItem
+        
+        
         view.addSubview(leftButton)
         leftButton.addTarget(self, action: #selector(menuTapped), for: .touchUpInside)
         leftButton.topAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
@@ -72,33 +81,46 @@ class CenterViewController: UIViewController {
         delegate?.toggleLeftPanel?()
     }
     
+    var popViewController: PopViewController?
+    
     @objc func popTapped() {
-        let popViewController = PopViewController()
-        popViewController.delegate = self
-        self.present(popViewController, animated: true, completion: nil)
+        print("pop tapped")
+        popViewController = PopViewController()
+        self.popViewController?.delegate = self
+//        self.popViewController?.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+//        self.popViewController?.modalTransitionStyle = .crossDissolve
+//        self.present(popViewController!, animated: true, completion: nil)
+        
+        self.popViewController?.modalPresentationStyle = .popover
+        self.popViewController?.preferredContentSize = CGSize(width: 500, height: 600)
+        self.popViewController?.popoverPresentationController?.sourceView = self.view
+        self.popViewController?.popoverPresentationController?.sourceRect = CGRect(x: 300, y: 300, width: 50, height: 50)
+        self.present(popViewController!, animated: true, completion: nil)
+        
+        
     }
     
     var isBottomPanelShown: Bool?
-    var bottomPanelViewController: BottomPanelViewController?
+    var snackBarViewController: SnackBarViewController?
     
     @objc func bottomBannerTapped(){
-        if (bottomPanelViewController != nil) {
+        if (snackBarViewController != nil) {
             isBottomPanelShown = true
         } else {
             isBottomPanelShown = false
         }
         if (!isBottomPanelShown!){
-            bottomPanelViewController = BottomPanelViewController()
-            let bottomBanner = bottomPanelViewController?.view
-            self.view.addSubview(bottomBanner!)
-            bottomBanner?.backgroundColor = .gray
-            bottomBanner?.translatesAutoresizingMaskIntoConstraints = true
+            snackBarViewController = SnackBarViewController()
+            let snackBar = snackBarViewController?.view
+            self.view.addSubview(snackBar!)
+            snackBar?.backgroundColor = .gray
+            snackBar?.translatesAutoresizingMaskIntoConstraints = true
             
             let ypos:CGFloat = view.frame.height
-            bottomBanner?.frame = CGRect(x: 0, y: ypos, width: self.view.frame.width, height: 50)
+            snackBar?.frame = CGRect(x: 0, y: ypos, width: self.view.frame.width, height: 50)
             UIView.animate(withDuration: 1, animations: {
                 
-                bottomBanner?.frame = CGRect(x: 0, y: ypos-80, width: self.view.frame.width, height: 50)
+                snackBar?.frame = CGRect(x: 0, y: ypos-80, width: self.view.frame.width, height: 50)
                 
                 
             }, completion: nil)
