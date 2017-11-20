@@ -19,24 +19,24 @@ class UTabBarViewController: UITabBarController {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         let vc = UHomeViewController(collectionViewLayout: layout)
-        vc.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.bookmarks, tag: 1)
+        vc.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.contacts, tag: 1)
         return vc
     }()
     
     let searchViewController: USearchViewController = {
         let vc = USearchViewController()
-        vc.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.featured, tag: 1)
+        vc.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.downloads, tag: 2)
         return vc
     }()
     
     lazy var orderViewController: UOrderViewController = {
         let vc = UOrderViewController()
-        vc.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.favorites, tag: 1)
+        vc.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.favorites, tag: 3)
         return vc
     }()
     let userViewController: UUserViewController = {
         let vc = UUserViewController()
-        vc.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.history, tag: 1)
+        vc.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.history, tag: 4)
         return vc
     }()
     

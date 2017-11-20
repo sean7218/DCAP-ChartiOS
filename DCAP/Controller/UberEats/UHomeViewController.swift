@@ -22,9 +22,9 @@ class UHomeViewController: UICollectionViewController, UICollectionViewDelegateF
         view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         let button = FilterButton(type: .system)
-        
+        button.tintColor = UIColor.lightGray
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Filter", for: .normal)
+        button.setTitle("Sort Restaurants", for: .normal)
         view.addSubview(button)
         NSLayoutConstraint.activate([
             button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -41,9 +41,29 @@ class UHomeViewController: UICollectionViewController, UICollectionViewDelegateF
         return view
     }()
     
+    var addressButtonView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        let button = UIButton(type: .system)
+        button.setTitle("101 Pakway >", for: .normal)
+        button.tintColor = UIColor.black
+        button.frame = CGRect(x: 0, y: 0, width: 100, height: 30)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(button)
+        NSLayoutConstraint.activate([
+            button.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            button.leftAnchor.constraint(equalTo: view.leftAnchor),
+            button.rightAnchor.constraint(equalTo: view.rightAnchor),
+            button.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            ])
+        return view
+    }()
+    
     let screen = UIScreen.main.bounds
     
     override func viewDidLoad() {
+        view.backgroundColor = .white
         collectionView?.backgroundColor = .lightGray
         collectionView?.frame = CGRect(x: 0, y: 120, width: view.frame.width, height: view.frame.height-122)
         self.navigationController?.isNavigationBarHidden = false
@@ -54,8 +74,17 @@ class UHomeViewController: UICollectionViewController, UICollectionViewDelegateF
 
     fileprivate func setupViews(){
         
-        let navBarHeight = (self.navigationController?.navigationBar.frame.height)! + 20
+        let navBarHeight = (self.navigationController?.navigationBar.frame.height)! + 44
+        self.navigationController?.navigationBar.prefersLargeTitles = false
         
+        //self.navigationItem.setRightBarButton(UIBarButtonItem.init(customView: addressButton), animated: true)
+        self.navigationItem.titleView? = addressButtonView
+//        self.navigationItem.titleView?.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-1-[v0]-1-|",
+//                                                                                     options: NSLayoutFormatOptions(),
+//                                                                                     metrics: nil, views: ["v0": addressButton]))
+//        self.navigationItem.titleView?.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-1-[v0]-1-|",
+//                                                                                     options: NSLayoutFormatOptions(),
+//                                                                                     metrics: nil, views: ["v0": addressButton]))
         view.addSubview(lineView)
         NSLayoutConstraint.activate([
             lineView.topAnchor.constraint(equalTo: view.topAnchor, constant: navBarHeight),
@@ -71,7 +100,8 @@ class UHomeViewController: UICollectionViewController, UICollectionViewDelegateF
             filterBar.rightAnchor.constraint(equalTo: view.rightAnchor),
             filterBar.heightAnchor.constraint(equalToConstant: 40)
             ])
-
+        
+        
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -99,15 +129,15 @@ class UHomeViewController: UICollectionViewController, UICollectionViewDelegateF
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: screen.width-40, height: 300)
+        return CGSize(width: screen.width, height: 300)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        let edge = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
+        let edge = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
         return edge
     }
     

@@ -20,10 +20,10 @@ class UHomeViewCell: UICollectionViewCell, UICollectionViewDelegate, UICollectio
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .green
+
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell2")
+        collectionView.register(USectionTwoCell.self, forCellWithReuseIdentifier: "Cell2")
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         setupViews()
     }
@@ -35,8 +35,10 @@ class UHomeViewCell: UICollectionViewCell, UICollectionViewDelegate, UICollectio
     fileprivate func setupViews(){
 
         addSubview(collectionView)
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-2-[v0]-2-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": collectionView]))
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-2-[v0]-2-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": collectionView]))
+        collectionView.backgroundColor = .lightGray
+        collectionView.showsHorizontalScrollIndicator = false
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[v0]-0-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": collectionView]))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[v0]-0-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": collectionView]))
         
     }
     
@@ -49,8 +51,11 @@ class UHomeViewCell: UICollectionViewCell, UICollectionViewDelegate, UICollectio
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell2", for: indexPath)
-        cell.backgroundColor = .yellow
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell2", for: indexPath) as! USectionTwoCell
+        cell.nameLabel.text = "Lucky Cat Ramen"
+        cell.cuisineLabel.text = "Japanese - $$"
+        cell.imageView.image = #imageLiteral(resourceName: "ramen_cat")
+        cell.backgroundColor = .white
         return cell
     }
     
@@ -58,4 +63,11 @@ class UHomeViewCell: UICollectionViewCell, UICollectionViewDelegate, UICollectio
         return CGSize(width: self.frame.width, height: self.frame.height-10)
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
+    }
 }
