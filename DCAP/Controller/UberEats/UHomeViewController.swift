@@ -8,7 +8,16 @@
 
 import UIKit
 
-class UHomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class UHomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, FilterViewDelegate {
+    
+    lazy var grayBackgroundView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor(white: 1, alpha: 0.7)
+        view.isUserInteractionEnabled = true
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(closeFilterView)))
+        return view
+    }()
     
     var lineView: UIView = {
         let view = UIView()
@@ -42,11 +51,40 @@ class UHomeViewController: UICollectionViewController, UICollectionViewDelegateF
         return view
     }()
     
-    var filterViewController: FilterViewController?
+    lazy var fitlerView: FilterView = {
+        let view = FilterView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.delegate = self
+        return view
+    }()
+    
+    var filterViewTopAnchor: NSLayoutConstraint?
+    var filterViewHeightAnchor: NSLayoutConstraint?
     @objc func showFilterView(){
-        filterViewController = FilterViewController()
-        present(filterViewController!, animated: true, completion: nil)
+        
+        view.addSubview(grayBackgroundView)
+        NSLayoutConstraint.activate([
+            grayBackgroundView.topAnchor.constraint(equalTo: view.topAnchor),
+            grayBackgroundView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            grayBackgroundView.widthAnchor.constraint(equalToConstant: view.frame.width),
+            grayBackgroundView.heightAnchor.constraint(equalToConstant: view.frame.height)
+        ])
+        
+        view.addSubview(fitlerView)
+        filterViewTopAnchor = fitlerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
+        filterViewTopAnchor?.isActive = true
+        fitlerView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
+        fitlerView.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
+        filterViewHeightAnchor = fitlerView.heightAnchor.constraint(equalToConstant: 400)
+        filterViewHeightAnchor?.isActive = true
     }
+    
+    @objc func closeFilterView() {
+        print("closing filterview")
+        fitlerView.removeFromSuperview()
+        grayBackgroundView.removeFromSuperview()
+    }
+    
     var addressButtonView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -81,17 +119,13 @@ class UHomeViewController: UICollectionViewController, UICollectionViewDelegateF
     fileprivate func setupViews(){
         
         let navBarHeight = (self.navigationController?.navigationBar.frame.height)! + 44
-        self.navigationController!.navigationBar.prefersLargeTitles = false
         
-        //self.navigationItem.setRightBarButton(UIBarButtonItem.init(customView: addressButton), animated: true)
-       
-        self.navigationController?.navigationItem.titleView = addressButtonView
-//        self.navigationItem.titleView?.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-1-[v0]-1-|",
-//                                                                                     options: NSLayoutFormatOptions(),
-//                                                                                     metrics: nil, views: ["v0": addressButton]))
-//        self.navigationItem.titleView?.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-1-[v0]-1-|",
-//                                                                                     options: NSLayoutFormatOptions(),
-//                                                                                     metrics: nil, views: ["v0": addressButton]))
+        
+        let attributedText = NSMutableAttributedString(string: "2590 N Moreland Blvd", attributes: [NSAttributedStringKey.font: UIFont.italicSystemFont(ofSize: 12)])
+        let titleLabel = UILabel()
+        titleLabel.attributedText = attributedText
+        navigationItem.titleView = titleLabel
+        
         view.addSubview(lineView)
         NSLayoutConstraint.activate([
             lineView.topAnchor.constraint(equalTo: view.topAnchor, constant: navBarHeight),
@@ -108,7 +142,8 @@ class UHomeViewController: UICollectionViewController, UICollectionViewDelegateF
             filterBar.heightAnchor.constraint(equalToConstant: 40)
             ])
         
-        
+
+
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -150,35 +185,6 @@ class UHomeViewController: UICollectionViewController, UICollectionViewDelegateF
     
 }
 
-class FilterButton: UIButton {
-    
-    let customeImageView: UIImageView = {
-        let iv = UIImageView(image: nil)
-        iv.backgroundColor = .white
-        iv.contentMode = .scaleAspectFit
-        iv.translatesAutoresizingMaskIntoConstraints = false
-       return iv
-    }()
-    
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupViews()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setupViews(){
-        addSubview(customeImageView)
-        NSLayoutConstraint.activate([
-            customeImageView.leftAnchor.constraint(equalTo: leftAnchor, constant: 5),
-            customeImageView.topAnchor.constraint(equalTo: topAnchor),
-            customeImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            customeImageView.widthAnchor.constraint(equalToConstant: 40)
-            ])
-    }
-}
+
 
 

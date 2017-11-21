@@ -28,7 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
-        
+        UINavigationBar.appearance().tintColor = UIColor.red
+   
         // Override point for customization after application launch.
         return true
     }
