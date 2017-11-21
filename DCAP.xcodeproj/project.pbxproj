@@ -37,6 +37,7 @@
 		A7E65FB31FC23F5200309C0D /* UHomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E65FB21FC23F5200309C0D /* UHomeViewCell.swift */; };
 		A7E65FB51FC254CA00309C0D /* USectionTwoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E65FB41FC254CA00309C0D /* USectionTwoCell.swift */; };
 		A7E65FB71FC2585300309C0D /* USectionOneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E65FB61FC2585300309C0D /* USectionOneCell.swift */; };
+		A7E65FBA1FC3502C00309C0D /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E65FB91FC3502C00309C0D /* FilterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		A7E65FB21FC23F5200309C0D /* UHomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UHomeViewCell.swift; sourceTree = "<group>"; };
 		A7E65FB41FC254CA00309C0D /* USectionTwoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USectionTwoCell.swift; sourceTree = "<group>"; };
 		A7E65FB61FC2585300309C0D /* USectionOneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USectionOneCell.swift; sourceTree = "<group>"; };
+		A7E65FB91FC3502C00309C0D /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +248,8 @@
 		A7E65FA71FC21B8100309C0D /* UberEats */ = {
 			isa = PBXGroup;
 			children = (
+				A7E65FBB1FC3549900309C0D /* Search */,
+				A7E65FB81FC3500300309C0D /* Filter */,
 				A7E65FB01FC222C100309C0D /* UTabBarViewController.swift */,
 				A7E65FA81FC21BC500309C0D /* UHomeViewController.swift */,
 				A7E65FB21FC23F5200309C0D /* UHomeViewCell.swift */,
@@ -256,6 +260,21 @@
 				A7E65FAE1FC2228D00309C0D /* UUserViewController.swift */,
 			);
 			path = UberEats;
+			sourceTree = "<group>";
+		};
+		A7E65FB81FC3500300309C0D /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				A7E65FB91FC3502C00309C0D /* FilterViewController.swift */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		A7E65FBB1FC3549900309C0D /* Search */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,6 +431,7 @@
 				A736E5D31FAC084F00E602C6 /* ContainerViewController.swift in Sources */,
 				A7E65FAB1FC2227400309C0D /* USearchViewController.swift in Sources */,
 				A7E65FAF1FC2228D00309C0D /* UUserViewController.swift in Sources */,
+				A7E65FBA1FC3502C00309C0D /* FilterViewController.swift in Sources */,
 				A736E60A1FB555AD00E602C6 /* CenterViewController.swift in Sources */,
 				A7E65FAD1FC2228000309C0D /* UOrderViewController.swift in Sources */,
 				A736E5D11FAC084F00E602C6 /* AppDelegate.swift in Sources */,

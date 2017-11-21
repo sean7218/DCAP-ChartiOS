@@ -17,7 +17,7 @@ class UHomeViewController: UICollectionViewController, UICollectionViewDelegateF
         return view
     }()
     
-    let filterBar: UIView = {
+    lazy var filterBar: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -25,6 +25,7 @@ class UHomeViewController: UICollectionViewController, UICollectionViewDelegateF
         button.tintColor = UIColor.lightGray
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Sort Restaurants", for: .normal)
+        button.addTarget(self, action: #selector(showFilterView), for: .touchUpInside)
         view.addSubview(button)
         NSLayoutConstraint.activate([
             button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -41,18 +42,23 @@ class UHomeViewController: UICollectionViewController, UICollectionViewDelegateF
         return view
     }()
     
+    var filterViewController: FilterViewController?
+    @objc func showFilterView(){
+        filterViewController = FilterViewController()
+        present(filterViewController!, animated: true, completion: nil)
+    }
     var addressButtonView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         let button = UIButton(type: .system)
         button.setTitle("101 Pakway >", for: .normal)
         button.tintColor = UIColor.black
-        button.frame = CGRect(x: 0, y: 0, width: 100, height: 30)
+        //button.frame = CGRect(x: 0, y: 0, width: 100, height: 30)
         button.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(button)
         NSLayoutConstraint.activate([
-            button.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            button.topAnchor.constraint(equalTo: view.topAnchor),
             button.leftAnchor.constraint(equalTo: view.leftAnchor),
             button.rightAnchor.constraint(equalTo: view.rightAnchor),
             button.bottomAnchor.constraint(equalTo: view.bottomAnchor)
@@ -75,10 +81,11 @@ class UHomeViewController: UICollectionViewController, UICollectionViewDelegateF
     fileprivate func setupViews(){
         
         let navBarHeight = (self.navigationController?.navigationBar.frame.height)! + 44
-        self.navigationController?.navigationBar.prefersLargeTitles = false
+        self.navigationController!.navigationBar.prefersLargeTitles = false
         
         //self.navigationItem.setRightBarButton(UIBarButtonItem.init(customView: addressButton), animated: true)
-        self.navigationItem.titleView? = addressButtonView
+       
+        self.navigationController?.navigationItem.titleView = addressButtonView
 //        self.navigationItem.titleView?.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-1-[v0]-1-|",
 //                                                                                     options: NSLayoutFormatOptions(),
 //                                                                                     metrics: nil, views: ["v0": addressButton]))
@@ -174,17 +181,4 @@ class FilterButton: UIButton {
     }
 }
 
-extension UIView {
-    func dropShadow(scale: Bool = true) {
-        self.layer.masksToBounds = false
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowOpacity = 0.5
-        self.layer.shadowOffset = CGSize(width: -1, height: 1)
-        self.layer.shadowRadius = 1
-        
-        self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
-        self.layer.shouldRasterize = true
-        self.layer.rasterizationScale = scale ? UIScreen.main.scale : 1
-    }
-    
-}
+
