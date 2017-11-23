@@ -86,14 +86,7 @@ class SnackBarView: UIView {
         expandButton.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         expandButton.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
         expandButton.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
-        
-//        let vert = NSLayoutConstraint.constraints(withVisualFormat: "H:|-[v0]-|", options: [], metrics: nil, views: ["v0": titleLabel])
-//        let hori = NSLayoutConstraint.constraints(withVisualFormat: "V:|-[v0]-|", options: [], metrics: nil, views: ["v0" : titleLabel])
-//        var allConstraints = [NSLayoutConstraint]()
-//        allConstraints += vert
-//        allConstraints += hori
-//        NSLayoutConstraint.activate(allConstraints)
-        
+         
     }
     
     

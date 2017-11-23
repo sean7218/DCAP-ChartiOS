@@ -29,6 +29,11 @@
 		A736E61F1FBCB44100E602C6 /* SnackBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A736E61E1FBCB44100E602C6 /* SnackBarViewController.swift */; };
 		A736E6211FBCB45C00E602C6 /* SnackBarViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A736E6201FBCB45C00E602C6 /* SnackBarViewControllerDelegate.swift */; };
 		A736E6231FBCB68600E602C6 /* SnackBarlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A736E6221FBCB68600E602C6 /* SnackBarlView.swift */; };
+		A757EFEC1FC650B600240CC9 /* FilterViewSortCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757EFEB1FC650B600240CC9 /* FilterViewSortCell.swift */; };
+		A757EFEE1FC6511F00240CC9 /* FilterViewMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757EFED1FC6511F00240CC9 /* FilterViewMenu.swift */; };
+		A757EFF01FC6518200240CC9 /* FilterViewDietaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757EFEF1FC6518200240CC9 /* FilterViewDietaryCell.swift */; };
+		A757EFF21FC651A800240CC9 /* FilterViewPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757EFF11FC651A800240CC9 /* FilterViewPriceCell.swift */; };
+		A757EFF41FC7343A00240CC9 /* FilterViewMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757EFF31FC7343A00240CC9 /* FilterViewMenuDelegate.swift */; };
 		A7E65FA91FC21BC500309C0D /* UHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E65FA81FC21BC500309C0D /* UHomeViewController.swift */; };
 		A7E65FAB1FC2227400309C0D /* USearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E65FAA1FC2227400309C0D /* USearchViewController.swift */; };
 		A7E65FAD1FC2228000309C0D /* UOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E65FAC1FC2228000309C0D /* UOrderViewController.swift */; };
@@ -88,6 +93,11 @@
 		A736E61E1FBCB44100E602C6 /* SnackBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackBarViewController.swift; sourceTree = "<group>"; };
 		A736E6201FBCB45C00E602C6 /* SnackBarViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackBarViewControllerDelegate.swift; sourceTree = "<group>"; };
 		A736E6221FBCB68600E602C6 /* SnackBarlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackBarlView.swift; sourceTree = "<group>"; };
+		A757EFEB1FC650B600240CC9 /* FilterViewSortCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewSortCell.swift; sourceTree = "<group>"; };
+		A757EFED1FC6511F00240CC9 /* FilterViewMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewMenu.swift; sourceTree = "<group>"; };
+		A757EFEF1FC6518200240CC9 /* FilterViewDietaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewDietaryCell.swift; sourceTree = "<group>"; };
+		A757EFF11FC651A800240CC9 /* FilterViewPriceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewPriceCell.swift; sourceTree = "<group>"; };
+		A757EFF31FC7343A00240CC9 /* FilterViewMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewMenuDelegate.swift; sourceTree = "<group>"; };
 		A7E65FA81FC21BC500309C0D /* UHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UHomeViewController.swift; sourceTree = "<group>"; };
 		A7E65FAA1FC2227400309C0D /* USearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USearchViewController.swift; sourceTree = "<group>"; };
 		A7E65FAC1FC2228000309C0D /* UOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UOrderViewController.swift; sourceTree = "<group>"; };
@@ -249,18 +259,26 @@
 			path = SnackBar;
 			sourceTree = "<group>";
 		};
+		A757EFEA1FC63CAD00240CC9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A7E65FA81FC21BC500309C0D /* UHomeViewController.swift */,
+				A7E65FB21FC23F5200309C0D /* UHomeViewCell.swift */,
+				A7E65FB61FC2585300309C0D /* USectionOneCell.swift */,
+				A7E65FB41FC254CA00309C0D /* USectionTwoCell.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		A7E65FA71FC21B8100309C0D /* UberEats */ = {
 			isa = PBXGroup;
 			children = (
+				A757EFEA1FC63CAD00240CC9 /* Home */,
 				A7E65FBF1FC4B70300309C0D /* User */,
 				A7E65FBE1FC4B6F700309C0D /* Oders */,
 				A7E65FBB1FC3549900309C0D /* Search */,
 				A7E65FB81FC3500300309C0D /* Filter */,
 				A7E65FB01FC222C100309C0D /* UTabBarViewController.swift */,
-				A7E65FA81FC21BC500309C0D /* UHomeViewController.swift */,
-				A7E65FB21FC23F5200309C0D /* UHomeViewCell.swift */,
-				A7E65FB61FC2585300309C0D /* USectionOneCell.swift */,
-				A7E65FB41FC254CA00309C0D /* USectionTwoCell.swift */,
 			);
 			path = UberEats;
 			sourceTree = "<group>";
@@ -268,9 +286,14 @@
 		A7E65FB81FC3500300309C0D /* Filter */ = {
 			isa = PBXGroup;
 			children = (
-				A7E65FB91FC3502C00309C0D /* FilterView.swift */,
 				A7E65FBC1FC4B2A300309C0D /* FilterBar.swift */,
+				A7E65FB91FC3502C00309C0D /* FilterView.swift */,
 				A7E65FC01FC4B75A00309C0D /* FilterViewDelegate.swift */,
+				A757EFED1FC6511F00240CC9 /* FilterViewMenu.swift */,
+				A757EFF31FC7343A00240CC9 /* FilterViewMenuDelegate.swift */,
+				A757EFEF1FC6518200240CC9 /* FilterViewDietaryCell.swift */,
+				A757EFF11FC651A800240CC9 /* FilterViewPriceCell.swift */,
+				A757EFEB1FC650B600240CC9 /* FilterViewSortCell.swift */,
 			);
 			path = Filter;
 			sourceTree = "<group>";
@@ -433,12 +456,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A757EFEC1FC650B600240CC9 /* FilterViewSortCell.swift in Sources */,
 				A736E6081FB5558A00E602C6 /* CenterViewControllerDelegate.swift in Sources */,
 				A736E6211FBCB45C00E602C6 /* SnackBarViewControllerDelegate.swift in Sources */,
+				A757EFEE1FC6511F00240CC9 /* FilterViewMenu.swift in Sources */,
 				A7E65FBD1FC4B2A300309C0D /* FilterBar.swift in Sources */,
 				A7E65FB11FC222C100309C0D /* UTabBarViewController.swift in Sources */,
 				A736E6041FAC27FD00E602C6 /* HomeViewController.swift in Sources */,
 				A736E61F1FBCB44100E602C6 /* SnackBarViewController.swift in Sources */,
+				A757EFF21FC651A800240CC9 /* FilterViewPriceCell.swift in Sources */,
 				A736E6121FB737F800E602C6 /* PageCell.swift in Sources */,
 				A7E65FC11FC4B75A00309C0D /* FilterViewDelegate.swift in Sources */,
 				A7E65FA91FC21BC500309C0D /* UHomeViewController.swift in Sources */,
@@ -456,6 +482,8 @@
 				A7E65FAB1FC2227400309C0D /* USearchViewController.swift in Sources */,
 				A7E65FAF1FC2228D00309C0D /* UUserViewController.swift in Sources */,
 				A7E65FBA1FC3502C00309C0D /* FilterView.swift in Sources */,
+				A757EFF01FC6518200240CC9 /* FilterViewDietaryCell.swift in Sources */,
+				A757EFF41FC7343A00240CC9 /* FilterViewMenuDelegate.swift in Sources */,
 				A736E60A1FB555AD00E602C6 /* CenterViewController.swift in Sources */,
 				A7E65FAD1FC2228000309C0D /* UOrderViewController.swift in Sources */,
 				A736E5D11FAC084F00E602C6 /* AppDelegate.swift in Sources */,
@@ -629,11 +657,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GDTG5SQZRN;
 				INFOPLIST_FILE = DCAP/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sz7218.DCAP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -644,11 +673,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GDTG5SQZRN;
 				INFOPLIST_FILE = DCAP/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sz7218.DCAP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

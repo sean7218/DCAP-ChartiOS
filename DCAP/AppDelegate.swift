@@ -28,9 +28,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
-        UINavigationBar.appearance().tintColor = UIColor.red
-   
-        // Override point for customization after application launch.
+//        UINavigationBar.appearance().tintColor = UIColor.red
+//        UINavigationBar.appearance().shadowImage = UIImage()
+//        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+//        application.statusBarStyle = .lightContent
+//
+//        let statusBarBackgroundView = UIView()
+//        statusBarBackgroundView.backgroundColor = UIColor.red
+//        window?.addSubview(statusBarBackgroundView)
+//        window?.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutFormatOptions(),
+//                                                              metrics: nil, views: ["v0": statusBarBackgroundView]))
+//        window?.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0(20)]|", options: NSLayoutFormatOptions(),
+//                                                              metrics: nil, views: ["v0": statusBarBackgroundView]))
+        
         return true
     }
 
