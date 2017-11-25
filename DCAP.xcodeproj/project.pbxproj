@@ -33,7 +33,7 @@
 		A757EFEE1FC6511F00240CC9 /* FilterViewMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757EFED1FC6511F00240CC9 /* FilterViewMenu.swift */; };
 		A757EFF01FC6518200240CC9 /* FilterViewDietaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757EFEF1FC6518200240CC9 /* FilterViewDietaryCell.swift */; };
 		A757EFF21FC651A800240CC9 /* FilterViewPriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757EFF11FC651A800240CC9 /* FilterViewPriceCell.swift */; };
-		A757EFF41FC7343A00240CC9 /* FilterViewMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757EFF31FC7343A00240CC9 /* FilterViewMenuDelegate.swift */; };
+		A757EFF61FC9284C00240CC9 /* FilterViewMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757EFF51FC9284C00240CC9 /* FilterViewMenuDelegate.swift */; };
 		A7E65FA91FC21BC500309C0D /* UHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E65FA81FC21BC500309C0D /* UHomeViewController.swift */; };
 		A7E65FAB1FC2227400309C0D /* USearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E65FAA1FC2227400309C0D /* USearchViewController.swift */; };
 		A7E65FAD1FC2228000309C0D /* UOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E65FAC1FC2228000309C0D /* UOrderViewController.swift */; };
@@ -97,7 +97,7 @@
 		A757EFED1FC6511F00240CC9 /* FilterViewMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewMenu.swift; sourceTree = "<group>"; };
 		A757EFEF1FC6518200240CC9 /* FilterViewDietaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewDietaryCell.swift; sourceTree = "<group>"; };
 		A757EFF11FC651A800240CC9 /* FilterViewPriceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewPriceCell.swift; sourceTree = "<group>"; };
-		A757EFF31FC7343A00240CC9 /* FilterViewMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewMenuDelegate.swift; sourceTree = "<group>"; };
+		A757EFF51FC9284C00240CC9 /* FilterViewMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewMenuDelegate.swift; sourceTree = "<group>"; };
 		A7E65FA81FC21BC500309C0D /* UHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UHomeViewController.swift; sourceTree = "<group>"; };
 		A7E65FAA1FC2227400309C0D /* USearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USearchViewController.swift; sourceTree = "<group>"; };
 		A7E65FAC1FC2228000309C0D /* UOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UOrderViewController.swift; sourceTree = "<group>"; };
@@ -290,7 +290,7 @@
 				A7E65FB91FC3502C00309C0D /* FilterView.swift */,
 				A7E65FC01FC4B75A00309C0D /* FilterViewDelegate.swift */,
 				A757EFED1FC6511F00240CC9 /* FilterViewMenu.swift */,
-				A757EFF31FC7343A00240CC9 /* FilterViewMenuDelegate.swift */,
+				A757EFF51FC9284C00240CC9 /* FilterViewMenuDelegate.swift */,
 				A757EFEF1FC6518200240CC9 /* FilterViewDietaryCell.swift */,
 				A757EFF11FC651A800240CC9 /* FilterViewPriceCell.swift */,
 				A757EFEB1FC650B600240CC9 /* FilterViewSortCell.swift */,
@@ -474,6 +474,7 @@
 				A736E6061FAFEE8E00E602C6 /* MenuViewController.swift in Sources */,
 				A736E60E1FB7342B00E602C6 /* SidePanelViewControllerDelegate.swift in Sources */,
 				A736E60C1FB555E200E602C6 /* SidePanelViewController.swift in Sources */,
+				A757EFF61FC9284C00240CC9 /* FilterViewMenuDelegate.swift in Sources */,
 				A736E5D91FAC084F00E602C6 /* DCAP.xcdatamodeld in Sources */,
 				A7E65FB51FC254CA00309C0D /* USectionTwoCell.swift in Sources */,
 				A736E6101FB737D500E602C6 /* Page.swift in Sources */,
@@ -483,7 +484,6 @@
 				A7E65FAF1FC2228D00309C0D /* UUserViewController.swift in Sources */,
 				A7E65FBA1FC3502C00309C0D /* FilterView.swift in Sources */,
 				A757EFF01FC6518200240CC9 /* FilterViewDietaryCell.swift in Sources */,
-				A757EFF41FC7343A00240CC9 /* FilterViewMenuDelegate.swift in Sources */,
 				A736E60A1FB555AD00E602C6 /* CenterViewController.swift in Sources */,
 				A7E65FAD1FC2228000309C0D /* UOrderViewController.swift in Sources */,
 				A736E5D11FAC084F00E602C6 /* AppDelegate.swift in Sources */,

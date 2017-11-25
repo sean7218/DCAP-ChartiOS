@@ -79,7 +79,6 @@ class FilterView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, 
         collectionView.dataSource = self
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "FilterCell")
         filterViewMenu.delegate = self
-        
         setupViews()
     }
     
@@ -154,12 +153,9 @@ class FilterView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-    func scrollToMenu(Atindex index: Int) {
-            collectionView.selectItem(at: IndexPath.init(item: index, section: 0), animated: true, scrollPosition: UICollectionViewScrollPosition.centeredHorizontally)
-    }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let x = scrollView.contentOffset.x
+        //let x = scrollView.contentOffset.x
         
         
     }
@@ -177,10 +173,11 @@ class FilterView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, 
 }
 
 extension FilterView: FilterViewMenuDelegate {
-    func buttonClicked(indx: Int) {
-        print("The Menu Button has clicked \(indx)")
-        let indexPath = IndexPath(item: indx, section: 0)
-        self.collectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
+    func selectTheMenu(index: Int) {
+        print("selectTheMenu: \(index)")
+        
+        let indexPath = IndexPath(item: index, section: 0)
+        self.collectionView.selectItem(at: indexPath, animated: true, scrollPosition: UICollectionViewScrollPosition.centeredHorizontally)
     }
     
     
