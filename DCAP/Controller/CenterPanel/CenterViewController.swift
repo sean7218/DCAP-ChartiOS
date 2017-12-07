@@ -68,7 +68,7 @@ class CenterViewController: UIViewController {
         popButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         view.addSubview(bottomButton)
-        bottomButton.addTarget(self, action: #selector(bottomBannerTapped), for: .touchUpInside)
+
         bottomButton.topAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
         bottomButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         bottomButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
@@ -101,33 +101,9 @@ class CenterViewController: UIViewController {
     }
     
     var isBottomPanelShown: Bool?
-    var snackBarViewController: SnackBarViewController?
+
     
-    @objc func bottomBannerTapped(){
-        if (snackBarViewController != nil) {
-            isBottomPanelShown = true
-        } else {
-            isBottomPanelShown = false
-        }
-        if (!isBottomPanelShown!){
-            snackBarViewController = SnackBarViewController()
-            let snackBar = snackBarViewController?.view
-            self.view.addSubview(snackBar!)
-            snackBar?.backgroundColor = .gray
-            snackBar?.translatesAutoresizingMaskIntoConstraints = true
-            
-            let ypos:CGFloat = view.frame.height
-            snackBar?.frame = CGRect(x: 0, y: ypos, width: self.view.frame.width, height: 50)
-            UIView.animate(withDuration: 1, animations: {
-                
-                snackBar?.frame = CGRect(x: 0, y: ypos-80, width: self.view.frame.width, height: 50)
-                
-                
-            }, completion: nil)
-            isBottomPanelShown = true
-        }
-        
-    }
+
     
 }
 

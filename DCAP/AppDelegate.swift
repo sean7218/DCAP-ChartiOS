@@ -15,31 +15,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     var containerViewController: ContainerViewController?
-    var tabBarController: UITabBarController = {
-        let tabBarController = UTabBarViewController()
-        return tabBarController
-    }()
 
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        // initialize all the root viewcontroller
         window = UIWindow(frame: UIScreen.main.bounds)
         containerViewController = ContainerViewController()
-
-        window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
-//        UINavigationBar.appearance().tintColor = UIColor.red
-//        UINavigationBar.appearance().shadowImage = UIImage()
-//        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-//        application.statusBarStyle = .lightContent
-//
-//        let statusBarBackgroundView = UIView()
-//        statusBarBackgroundView.backgroundColor = UIColor.red
-//        window?.addSubview(statusBarBackgroundView)
-//        window?.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutFormatOptions(),
-//                                                              metrics: nil, views: ["v0": statusBarBackgroundView]))
-//        window?.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0(20)]|", options: NSLayoutFormatOptions(),
-//                                                              metrics: nil, views: ["v0": statusBarBackgroundView]))
+        window?.rootViewController = containerViewController
+        
+        // setup navigationbar appearances
+        UINavigationBar.appearance().tintColor = UIColor.red
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        application.statusBarStyle = .lightContent
+
         
         return true
     }
